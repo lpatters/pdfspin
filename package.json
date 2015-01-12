@@ -1,0 +1,37 @@
+{
+  "name": "pdfspin",
+  "version": "0.0.7",
+  "description": "PDF manipulation in Node.js. (Forked from spindrift by timcameronryan) ",
+  "main": "pdfspin.js",
+  "dependencies": {
+    "temp": "~0.4.0",
+    "bufferjs": "~2.0.0",
+    "bufferstream": "~0.5.1",
+    "async": "~0.1.22"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lpatters/pdfspin.git"
+  },
+  "author": {
+    "name": "Tim Cameron Ryan"
+  },
+  "license": "MIT",
+  "keywords": [
+    "pdf",
+    "manipulation",
+    "postscript",
+    "document",
+    "split",
+    "join",
+    "crop"
+  ],
+  "maintainers": [
+    {
+      "name": "lpatters",
+      "email": "lewis.patterson@whiteboard-it.com"
+    }
+  ],
+  "homepage": "https://github.com/lpatters/pdfspin"
+}
