@@ -42,7 +42,7 @@ function proxyStream (a, b) {
   }
 }
 
-// spindrift
+// pdfspin
 
 function Command (input, ready) {
   this.input = input;
@@ -358,13 +358,13 @@ Command.prototype._exec = function () {
   return stream;
 }
 
-var spindrift = function (path) {
+var pdfspin = function (path) {
   return new Command(path);
 }
 
 var joinTemp = temp.mkdirSync('pdfimages'), joinindex = 0;
 
-spindrift.join = function () {
+pdfspin.join = function () {
   var args;
   if(Array.isArray(arguments[0])){
     args = arguments[0];
@@ -383,9 +383,8 @@ spindrift.join = function () {
         next(null, file);
       });
   }, function (err, files) {
-    command = ['pdftk'].concat(files, ['output', outfile]);
+    var command = ['pdftk'].concat(files, ['output', outfile]);
     var prog = spawn(command[0], command.slice(1));
-    console.error('spawn:', command.join(' '));
     prog.stderr.on('data', function (data) {
       process.stderr.write(command[0].match(/[^\/]*$/)[0] + ': ' + String(data));
     });
@@ -401,4 +400,4 @@ spindrift.join = function () {
   return pdf;
 }
 
-module.exports = spindrift;
+module.exports = pdfspin;
